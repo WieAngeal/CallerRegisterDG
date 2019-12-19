@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>叫号页</title>
+    <meta charSet="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta httpEquiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit" />
+    <meta name="keywords" content="demo" />
+    <meta name="description" content="demo" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="dist/css/_common.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+    <script type="text/javascript" src="dist/js/lib/viewport/viewport.js"></script>
+    <script type="text/javascript" src="dist/js/lib/viewport/viewport1.js"></script>
+</head>
+
+<body>
+    <div class="call-wraper">
+        <div class="call-top-header">
+            <div class="call-top-lf"></div>
+            <div class="call-top-rt">
+                <div class="rt-data">
+                    <p id="newdate">2019年9月24日</p>
+					<p id="week">星期二   </p>
+                </div>
+                <i class="rt-data-icon"></i>
+                <div class="data-time">
+                    <p id="time">下午<span>15:32:20</span> </p>
+                </div>
+            </div>
+            <div class="call-top-mid"></div>
+        </div>
+        <div class="call-nav-bar">
+            <i class="call-sound-icon"></i>
+            <div class="bd">
+                <ul>
+                    <li>请 CT022 号患者 张志刚 到 CT第一检查室 进行检查！  <em> </em></li>
+                </ul>
+            </div>
+        </div>
+        <div class="call-cons">
+            <div class="call-cons-lf">
+                <div class="cons-lf-tit">
+                    <ul>
+                        <li>等待患者</li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul>
+                        <li><a href="">CT022</a> <a href="">张**刚</a> <a href="">CT第一检查室</a> <a href="">已呼叫</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">CT023</a> <a href="">王**娟</a> <a href="">CT第一检查室</a> <a href="">等待中</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">CT024</a> <a href="">刘**庆</a> <a href="">CT第一检查室</a> <a href="">等待中</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">CT025</a> <a href="">张**伟</a> <a href="">CT第一检查室</a> <a href="">等待中</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">CT026</a> <a href="">胡**峰</a> <a href="">CT第一检查室</a> <a href="">等待中</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="">CT027</a> <a href="">陈**强</a> <a href="">CT第一检查室</a> <a href="">等待中</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="call-cons-rt">
+                <div class="cons-rt-tit">
+                    <ul>
+                        <li>过号患者</li>
+                    </ul>
+                </div>
+                <div class="bd">
+                    <ul>
+                        <li><a href="">CT005</a> <a href="">王保朝</a> </li>
+                    </ul>
+                    <ul>
+                        <li><a href="">CT011</a> <a href="">张晓香</a> </li>
+                    </ul>
+                    <ul>
+                        <li><a href="">CT014</a> <a href="">李莹莹</a> </li>
+                    </ul>
+                    <ul>
+                        <li><a href="">CT018</a> <a href="">任志成</a> </li>
+                    </ul>
+                    <ul>
+                        <li><a href="">CT019</a> <a href="">武  磊</a> </li>
+                    </ul>
+                    <ul>
+                        <li><a href="">CT021</a> <a href="">赵丽霞</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="call-bots">
+            <p>请保持安静，依次等候就诊！等候区请勿吸烟，谢谢配合！</p>
+        </div>
+    </div>
+    <script src="dist/js/lib/jquery/jquery-1.11.3.min.js"></script>
+    <script src="dist/js/lib/backstretch/jquery.backstretch.min.js"></script>
+    <script src="dist/js/lib/superSlide/jquery.SuperSlide.2.1.1.js"></script>
+    <script>
+        $(function() {
+            $('body').backstretch(['dist/img/call-baackground-bg.png']);
+            // top slide
+            jQuery(".call-nav-bar").slide({
+                mainCell: ".bd ul",
+                autoPlay: true,
+                effect: "leftMarquee",
+                interTime: 10,
+                trigger: "click"
+            });
+            // left slide
+            jQuery(".call-cons-lf").slide({
+                // titCell:".hd ul",
+                mainCell: ".bd",
+                autoPage: true,
+                effect: "topLoop",
+                autoPlay: true,
+                trigger: "mouseover",
+                interTime: 2500,
+                vis: 6
+            });
+            jQuery(".call-cons-rt").slide({
+                // titCell:".hd ul",
+                mainCell: ".bd",
+                autoPage: true,
+                effect: "topLoop",
+                autoPlay: true,
+                trigger: "mouseover",
+                interTime: 2500,
+                vis: 6
+            });
+
+
+        })
+		
+		function updatetime(){
+			var now = new Date();
+			var arr = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+			var year = now.getFullYear(); //得到年份
+			var month = now.getMonth();//得到月份
+			var date = now.getDate();//得到日期
+			var day = now.getDay();//得到周几
+			var hour = now.getHours();//得到小时
+			var minu = now.getMinutes();//得到分钟
+			var sec = now.getSeconds();//得到秒
+			month = month + 1;
+			if (hour < 12) sx = "上午 "
+			else sx = "下午 "
+			if (month < 10) month = "0" + month;
+			if (date < 10) date = "0" + date;
+			if (hour < 10) hour = "0" + hour;
+			if (minu < 10) minu = "0" + minu;
+			if (sec < 10) sec = "0" + sec;
+			var newdate = "";
+			var time = "";
+			var week = "";
+									
+			newdate = year + "年" + month + "月" + date + "日";
+			time = sx + hour + ":" + minu + ":" + sec;
+			week = arr[day];	
+
+			$('#newdate').text(newdate);
+			$('#time').text(time);
+			$('#week').text(week);
+		}
+		setInterval("updatetime()", 1000);
+		
+    </script>
+</body>
+
+</html>

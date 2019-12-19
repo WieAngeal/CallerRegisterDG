@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>入口页</title>
+    <meta charSet="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta httpEquiv="Cache-Control" content="no-siteapp" />
+    <meta name="renderer" content="webkit" />
+    <meta name="keywords" content="demo" />
+    <meta name="description" content="demo" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="dist/css/_common.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+    <script type="text/javascript" src="dist/js/lib/viewport/viewport.js"></script>
+	<script language="javascript" src="lodopFuncs.js"></script>
+</head>
+
+<body>
+    <div class="touch_wraper">
+        <div class="touch_header fn-clear">
+            <div class="touch_header_l"></div>
+            <div class="touch_header_r">
+				<div class="touch_weather">
+                    <i class="weather_icon"></i>
+                    <div class="touch_weather_r">
+                        <p>多云转晴</p>
+                        <p>15℃~36℃</p>
+                    </div>
+                </div>
+                <div class="touch_date">
+                    <p id="week">星期二</p>
+                    <p id="newdate">2016年09月24日</p>
+                </div>                
+				<div id="time" class="touch_time">下午15:32</div>
+            </div>
+        </div>
+        <div class="touch_content">
+            <div class="touch_content_header">
+                自助分诊登记机
+            </div>
+            <div class="touch_content_con fn-clear">
+                <div class="touch_l">					
+                    <div id="input_part"></div>
+					<span id="error" style="color:red"></span>
+                    <span>请扫面二维码或输入手机号进行登记</span>
+                    <p>温馨提示：请将您的二维码放置于右下 侧固定区域进行扫描，获取登记。
+                    </p>
+                </div>
+                <div class="touch_r">
+                    <ul class="touch_mouse fn-clear">
+                        <li class="num_btn">1</li>
+                        <li class="num_btn">2</li>
+                        <li class="num_btn">3</li>
+                        <li class="num_btn">4</li>
+                        <li class="num_btn">5</li>
+                        <li class="num_btn">6</li>
+                        <li class="num_btn">7</li>
+                        <li class="num_btn">8</li>
+                        <li class="num_btn">9</li>
+                        <li class="num_btn">0</li>
+                        <li class="num_btn">X</li>
+                        <li class="d_btn"><i class="del_btn"></i></li>
+                        <li class="btn_li clear_btn">清除</li>
+                        <li class="btn_li ok_btn">确定</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="touch_content_con2" style="display: none">
+                <div class="touch_content_text">				
+                    <div id="aldaaaaaa">
+                        <span>姓 名：</span>
+                        <p>张明明</p>
+                    </div>
+                    <div>
+                        <span>性 别：</span>
+                        <p>男</p>
+                    </div>
+                    <div>
+                        <span>年 龄：</span>
+                        <p>35岁</p>
+                    </div>
+                    <div>
+                        <span>申请科室：</span>
+                        <p>神经外科</p>
+                    </div>
+                    <div>
+                        <span>检查科室：</span>
+                        <p>放射科</p>
+                    </div>
+                    <div>
+                        <span>检查项目：</span>
+                        <p>头颅CT平扫</p>
+                    </div>
+                    <div>
+                        <span>检查房间：</span>
+                        <p>CT第一检查室</p>
+                    </div>
+                    <div>
+                        <span>排 队 号 ：</span>
+                        <p>CT008</p>
+                    </div>				
+                </div>
+                <div class="touch_content_btn fn-clear">
+                    <div class="cancel_btn">取消</div>
+                    <div class="yes_btn" onclick=DirectPrint()>确定</div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!--startprint1-->
+		<!DOCTYPE html>
+		<div id="reg_html">
+		<html>
+		<head>
+			<title>登记凭条打印预览</title>
+			<meta charSet="utf-8" />
+			<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+			<meta httpEquiv="Cache-Control" content="no-siteapp" />
+			<meta name="renderer" content="webkit" />
+			<link rel="stylesheet" type="text/css" href="dist/css/print.css">
+		</head>
+			<body>
+				<table bgcolor="#EEEEEE" border="1" align="center" cellpadding="0" cellspacing="0" width="100%" bgcolor="#FFFFFF" bordercolor="#999999" style="line-height:130%">
+					<tr align="center" height="50">
+						<td style="line-height:120%" colspan="6"><font size="5">东莞市第三人民医院</td>
+					</tr>
+					<tr align="center" height="40">
+						<td style="line-height:120%">姓 名</td>
+						<td><font size="4">张明明</td>
+						<td width="15%">性 别</td>
+						<td width="15%"><font size="4">男</td>
+						<td>年龄</td>
+						<td><font size="4">35岁</td>
+					</tr>
+					<tr align="center" height="40">
+						<td colspan="2">申请科室</td>
+						<td colspan="4"><font size="4" >神经外科</td>
+					</tr>
+					<tr align="center" height="40">
+						<td>检查科室</td>
+						<td colspan="2"><font size="4">放射科</td>
+						<td>检查房间</td>
+						<td colspan="2"><font size="4">CT第一检查室</td>
+					</tr>
+					<tr align="center" height="40">
+						<td colspan="2">检查项目</td>
+						<td colspan="4"><font size="4">头颅CT平扫</td>
+					</tr>
+					<tr align="center" height="100">
+						<td colspan="2"><font size="6">排队号</td>
+						<td colspan="4"><font size="7">CT008</td>
+					</tr>
+				</table>
+			</body>
+		</html>
+		</div>
+	<!--endprint1-->
+    <script src="dist/js/lib/jquery/jquery-1.11.3.min.js"></script>
+    <script>
+		var LODOP; //声明为全局变量
+		
+        $(function() {
+            $(".touch_mouse li").on("touchstart", function(e) {
+                $(this).addClass('li_mouse');
+
+            });
+
+            $(".touch_mouse li").on("touchend", function(e) {
+                $(this).removeClass('li_mouse');
+            });
+            // 输入
+            $('.num_btn').on("click", function(e) {
+                if ($('#input_part').text().length < 11) {
+                    var num_val = $(this).text();
+                    $('#input_part').append(num_val);
+                };
+            });
+
+            // 清空
+            $('.clear_btn').on("click", function(e) {
+                $('#input_part').text('');
+				$('#error').text('');
+            });
+
+            // 回退
+            $('.d_btn').on("click", function(e) {
+                var num = $('#input_part').text();
+                num = num.substring(0, num.length - 1);
+                $('#input_part').text(num);
+            });
+
+            // 确定
+            $('.ok_btn').on("click", function(e) {
+				var num = $('#input_part').text();
+                
+				if(!isPhoneNumber(num)){
+					$('#error').text("请核对并输入正确的手机号！").style.color = "#6E4500";;
+					setTimeout(function() {
+						if ($(this).parents('.touch_content_con').hide()) {
+							// debugger
+							$('.touch_content_con2').hide();
+							$('.touch_content_con').show();
+							$('#input_part').text('');
+							$('#error').text('');
+						}
+					}, 10000);
+					return;
+				}
+			
+                $(this).parents('.touch_content_con').hide().siblings().show();
+                setTimeout(function() {
+                    if ($(this).parents('.touch_content_con').hide()) {
+                        // debugger
+                        $('.touch_content_con2').hide();
+                        $('.touch_content_con').show();
+						$('#input_part').text('');
+						$('#error').text('');
+                    }
+                }, 5000000);
+            });
+            $('.cancel_btn').on("click", function(e) {
+                $(this).parents('.touch_content_con2').hide().siblings().show();
+            });
+            $('.yes_btn').on("click", function(e) {
+                $(this).parents('.touch_content_con2').hide().siblings().show();
+
+            });
+
+        })
+		
+		function isPhoneNumber(tel) {
+			var reg =/^0?1[3|4|5|6|7|8|9][0-9]\d{8}$/;
+			return reg.test(tel);
+		}
+		
+		function print_info(oper){
+			if (oper < 10){
+				bdhtml=window.document.body.innerHTML;//获取当前页的html代码
+				sprnstr="<!--startprint"+oper+"-->";//设置打印开始区域
+				eprnstr="<!--endprint"+oper+"-->";//设置打印结束区域
+				prnhtml=bdhtml.substring(bdhtml.indexOf(sprnstr)+18); //从开始代码向后取html
+				prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html
+				window.document.body.innerHTML=prnhtml;
+				window.print();
+				window.document.body.innerHTML=bdhtml;
+			} 
+			else {
+				window.print();
+			}
+		}
+		
+		function DirectPrint() {
+			CreateOnePage();
+			LODOP.PRINT();
+		}
+
+		function printSet() {
+			CreateOnePage();
+			LODOP.PRINT_SETUP();
+		}
+
+		function prn_preview() {
+			CreateOnePage();
+			LODOP.SET_PREVIEW_WINDOW(1,0,0,0,0,"");
+			LODOP.PREVIEW();
+		};
+
+		function CreateOnePage(){
+			LODOP=getLodop();
+			LODOP.PRINT_INIT("登记凭条打印预览");
+			LODOP.ADD_PRINT_HTM(0,0,"100%","100%",document.getElementById('reg_html').innerHTML);
+			LODOP.SET_PREVIEW_WINDOW(0,0,0,0,0,"");
+		};
+		
+		// 获取打印机列表
+		function getPrintNameList() {
+
+			var printerCount = LODOP.GET_PRINTER_COUNT();
+
+			// 只是在为了测试在双向绑定时可不可以赋值之后打印。
+			for (var i = 0; i < printerCount; i++) {
+				console.log(LODOP.GET_PRINTER_NAME(i))
+			}
+
+		}
+		// 指定打印机
+		function PreviewByPrinterName(strPrinterName) {
+			CreateOnePage();
+			if (LODOP.SET_PRINTER_INDEXA(strPrinterName))
+				LODOP.PREVIEW();
+		};
+
+		// 设置打印机的打印张数
+		function PrintMoreCopies(intCopies) {
+			CreateOnePage();
+			if (LODOP.SET_PRINT_COPIES(intCopies)) LODOP.PRINT();
+			else  alert("设置打印份数失败！");
+		};
+		
+		function updatetime(){
+			var now = new Date();
+			var arr = new Array("星期日","星期一","星期二","星期三","星期四","星期五","星期六");
+			var year = now.getFullYear(); //得到年份
+			var month = now.getMonth();//得到月份
+			var date = now.getDate();//得到日期
+			var day = now.getDay();//得到周几
+			var hour = now.getHours();//得到小时
+			var minu = now.getMinutes();//得到分钟
+			var sec = now.getSeconds();//得到秒
+			month = month + 1;
+			if (hour < 12) sx = "上午 "
+			else sx = "下午 "
+			if (month < 10) month = "0" + month;
+			if (date < 10) date = "0" + date;
+			if (hour < 10) hour = "0" + hour;
+			if (minu < 10) minu = "0" + minu;
+			if (sec < 10) sec = "0" + sec;
+			var newdate = "";
+			var time = "";
+			var week = "";
+									
+			newdate = year + "年" + month + "月" + date + "日";
+			time = sx + hour + ":" + minu + ":" + sec;
+			week = arr[day];	
+
+			$('#newdate').text(newdate);
+			$('#time').text(time);
+			$('#week').text(week);
+		}
+		setInterval("updatetime()", 1000);
+		
+    </script>
+</body>
+
+</html>
